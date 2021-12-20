@@ -1,0 +1,14 @@
+{% extends "main/layout/basic.html" %}
+
+{% block title %}
+Блоги
+{% endblock %}
+
+{% block content %}
+<h1>Все блоги</h1>
+{% for b in blogs %}
+<ul>
+    <li><a href="{% url 'blog' b.id %}">{{ b.title }}</a> ({{ b.publish }})  - <a href="{% url 'author' b.author_id %}">{{ b.author }}</a></li>
+</ul>
+{% endfor %}
+{% endblock %}

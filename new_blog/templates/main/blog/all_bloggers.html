@@ -1,0 +1,14 @@
+{% extends "main/layout/basic.html" %}
+
+{% block title %}
+Блогеры
+{% endblock %}
+
+{% block content %}
+<h1>Все блогеры</h1>
+{% for author in bloggers %}
+<ul>
+    <li><a href="{% url 'author' author.id %}">{{ author }}</a></li>
+</ul>
+{% endfor %}
+{% endblock %}
